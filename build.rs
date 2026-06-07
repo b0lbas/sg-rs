@@ -8,6 +8,7 @@ fn main() {
     bindgen::Builder::default()
         .header("/usr/include/scsi/sg.h")
         .derive_default(true)
+        .derive_copy(true)
         .generate()
         .expect("Unable to generate bindings")
         .write_to_file(out_path.join("bindings.rs"))
